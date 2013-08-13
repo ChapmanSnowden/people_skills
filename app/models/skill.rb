@@ -1,9 +1,10 @@
 class Skill < ActiveRecord::Base
-  has_many :proficiences
-  has_many :users, through: :proficiences
+  has_many :proficiencies
+  has_many :users, through: :proficiencies
   validates :name, uniqueness: true
-end
 
-def user_with_proficiency(number)
-  users.where(proficiences: {rating: number}).first
+  def user_with_proficiency(number)
+    users.where(proficiencies: {rating: number}).first
+  end
+
 end

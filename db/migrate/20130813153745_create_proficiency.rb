@@ -3,7 +3,7 @@ class CreateProficiency < ActiveRecord::Migration
     create_table :proficiencies do |t|
       t.references :user
       t.references :skill
-      t.integer :proficiency_rating
+      t.integer :rating
 
       t.timestamps
     end
